@@ -27,35 +27,20 @@ function colorCode() {
     }
 
 }
-
 colorCode();
-//click event on timeblock-> enter an event
-//save btn on that click event then saved to local storage
-var txt = new Array();
-var textIds = new Array();
-var text= [];
-saveBtn.on('click', function () {
-    $(".description").each(function () {
-        textIds.push(this.id);
 
-    });
-    for (let i = 0; i < textIds.length; i++) {
-        var decription = $('#' + textIds[i]).val();
-        text.push(decription);
-    }
-    var eventTxt = {
-        textIds,
-        text,
-    }
-
-    window.localStorage.setItem('event', JSON.stringify(eventTxt));
-});
 //saved events dont go away when refreshed
-var retrieveEvent = localStorage.getItem('event');
-var objectEvent = JSON.parse(retrieveEvent);
+$(".time-block").each(function () {
+    var id = $(this).attr("id");
+    var eventTxt = localStorage.getItem(id);
 
+    if (eventTxt !== null) {
+        $(this).children(".description").val(eventTxt);
+    }
+});
 
-console.log(objectEvent.textIds[0]);
-console.log(objectEvent.text[0]);
+//click event on timeblock-> enter an event then saved to local storage
+saveBtn.on('click', function () {
+    localStorage.setItem($(this).parent().attr("id"), $(this).siblings(".description").val())
 
-
+});
