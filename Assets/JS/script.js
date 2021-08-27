@@ -23,24 +23,43 @@ function colorCode() {
         } else if (parseInt(timeIds[i]) > currentTime) {
             $("#" + timeIds[i]).addClass('future');
         }
-
     }
-
 }
 colorCode();
 
-//saved events dont go away when refreshed
-$(".time-block").each(function () {
-    var id = $(this).attr("id");
-    var eventTxt = localStorage.getItem(id);
+//click event on timeblock-> enter an event then saved to local storage
+var txt = new Array();
+var textIds = new Array();
+var text = [];
 
-    if (eventTxt !== null) {
-        $(this).children(".description").val(eventTxt);
-    }
+$(".description").each(function () {
+    textIds.push(this.id);
 });
 
-//click event on timeblock-> enter an event then saved to local storage
 saveBtn.on('click', function () {
-    localStorage.setItem($(this).parent().attr("id"), $(this).siblings(".description").val())
+    for (let i = 0; i < textIds.length; i++) {
+        var decription = $('#' + textIds[i]).val();
+        text.push(decription);
+    }
+    var eventTxt = { text };
+    localStorage.setItem('event', JSON.stringify(eventTxt));
+});
+
+//saved events dont go away when refreshed
+var retrieveEvent = localStorage.getItem('event');
+var objectEvent = JSON.parse(retrieveEvent);
+
+
+$(".time-block").each(function () {
+    if (objectEvent !== null) {
+        for (let b = 0; b < 9; b++) {
+            var eve = objectEvent.text[b];
+            if (eve !== "") {
+                $(this).children("#" + textIds[b]).val(eve);
+            }
+
+        }
+    }
+
 
 });
