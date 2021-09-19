@@ -8,9 +8,10 @@ Create a calander application that allows you to save events for each hour of th
 ## Deployed Website
 Website:https://mvalljo.github.io/WorkPlanner/
 ## Website Preview
-![image](https://user-images.githubusercontent.com/86633258/131024687-a481a81d-9708-42d6-bc8c-0620a73559b0.png)
+![image](https://user-images.githubusercontent.com/86633258/133916518-8953643d-0b1e-4daf-804b-c383fcb217bf.png)
+![image](https://user-images.githubusercontent.com/86633258/133916548-1d9b6ed0-7eb6-4536-8341-31d1f2d80512.png)
 ## Contact Information
-Email: mvallejo@yahoo.com.
+Email: mvallejo14957@yahoo.com.
 # License
 ## MIT License
 
