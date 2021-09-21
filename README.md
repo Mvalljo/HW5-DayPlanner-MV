@@ -4,6 +4,7 @@ Create a calander application that allows you to save events for each hour of th
 ## Technologies Used
 - HTML
 - CSS
+- JavaScript
 - JQuery
 ## Deployed Website
 Website:https://mvalljo.github.io/WorkPlanner/
