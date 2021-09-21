@@ -27,6 +27,15 @@ function colorCode() {
 }
 colorCode();
 
+//Page refreshes after hour changes
+setInterval(myTimer, 1000);
+function myTimer() {
+    var time = moment().format('mm:ss');
+    if (time === "00:00") {
+        location.reload();
+    }
+}
+
 //click event on timeblock-> enter an event then saved to local storage
 var txt = new Array();
 var textIds = new Array();
@@ -49,7 +58,6 @@ saveBtn.on('click', function () {
 var retrieveEvent = localStorage.getItem('event');
 var objectEvent = JSON.parse(retrieveEvent);
 
-
 $(".time-block").each(function () {
     if (objectEvent !== null) {
         for (let b = 0; b < 9; b++) {
@@ -57,9 +65,6 @@ $(".time-block").each(function () {
             if (eve !== "") {
                 $(this).children("#" + textIds[b]).val(eve);
             }
-
         }
     }
-
-
 });
