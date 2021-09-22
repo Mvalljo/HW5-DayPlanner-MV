@@ -1,6 +1,6 @@
 # Work Planner
 ## Description 
-Create a calander application that allows you to save events for each hour of the day and events that are saved are shown when page is refreshed. When code is opened current day is displayed and each business hour block is coler coded to indicate whether it is in the past(grey), present(red), or future(green). 
+Create a calander application that allows you to save events for each hour of the day and events that are saved are shown when page is refreshed. When code is opened current day is displayed and each business hour block is color coded to indicate whether it is in the past(grey), present(red), or future(green) and they are re-styled dynamically when hour changes. 
 ## Technologies Used
 - HTML
 - CSS
